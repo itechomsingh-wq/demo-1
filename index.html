@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Swati Salvi, M.D. | Internal Medicine & Critical Care, Mumbai</title>
+<meta name="description" content="Dr. Swati Salvi, M.D. is a Senior Consultant in Internal Medicine and Critical Care at Apex Multi-Specialty Hospital, Mumbai, with over 8 years of clinical experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10283a;
+  --ink-soft:#44596a;
+  --paper:#f6f9f9;
+  --panel:#ffffff;
+  --line:#d5e0e2;
+  --teal:#0b7a7e;
+  --teal-deep:#075a5d;
+  --teal-wash:#e2f1f1;
+  --pulse:#12b5a8;
+  --serif:"Spectral", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#e6f0f1; --ink-soft:#a5b8be; --paper:#0d1b25; --panel:#132430;
+    --line:#26404f; --teal:#4fd1c5; --teal-deep:#7fe3d9; --teal-wash:#173341; --pulse:#4fd1c5;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e6f0f1; --ink-soft:#a5b8be; --paper:#0d1b25; --panel:#132430;
+  --line:#26404f; --teal:#4fd1c5; --teal-deep:#7fe3d9; --teal-wash:#173341; --pulse:#4fd1c5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:1rem;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--teal);text-underline-offset:3px}
+a:hover{color:var(--teal-deep)}
+:focus-visible{outline:3px solid var(--pulse);outline-offset:3px;border-radius:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.2;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+/* ---------- layout ---------- */
+.shell{display:grid;grid-template-columns:300px minmax(0,1fr);max-width:1240px;margin:0 auto}
+.side{
+  position:sticky;top:0;align-self:start;height:100vh;
+  padding:44px 32px 32px 36px;display:flex;flex-direction:column;gap:28px;
+  border-right:1px solid var(--line);
+}
+.monogram{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--ink);color:var(--paper);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-size:1.5rem;letter-spacing:.02em;
+}
+.side h2{font-size:1.35rem}
+.side .role{color:var(--ink-soft);font-size:.92rem;margin-top:6px}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav a{
+  text-decoration:none;color:var(--ink-soft);font-size:.95rem;
+  padding:7px 0 7px 14px;border-left:2px solid var(--line);
+  transition:color .2s,border-color .2s;
+}
+.nav a:hover,.nav a.active{color:var(--ink);border-left-color:var(--teal)}
+.nav a.active{font-weight:600}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:12px;font-size:.88rem}
+.side-foot a{word-break:break-word}
+.theme-btn{
+  align-self:flex-start;background:none;border:1px solid var(--line);color:var(--ink);
+  font:inherit;font-size:.85rem;padding:6px 12px;border-radius:999px;cursor:pointer;
+}
+.theme-btn:hover{border-color:var(--teal)}
+
+main{padding:0 clamp(20px,5vw,64px) 80px}
+section{padding-top:72px}
+section > h2{
+  font-size:1.9rem;margin-bottom:28px;
+  padding-bottom:12px;border-bottom:1px solid var(--line);
+}
+
+/* ---------- hero ---------- */
+.hero{padding-top:56px}
+.hero .reg{
+  display:inline-block;font-size:.88rem;color:var(--teal-deep);
+  background:var(--teal-wash);padding:5px 12px;border-radius:999px;margin-bottom:22px;
+}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.4rem);letter-spacing:-.015em;font-weight:400}
+.hero h1 span{display:block}
+.hero .title{
+  font-family:var(--serif);font-size:clamp(1.15rem,2.3vw,1.5rem);
+  color:var(--ink-soft);margin-top:14px;font-style:italic;
+}
+.ecg{margin:34px 0 8px;width:100%;height:84px;display:block}
+.ecg path{
+  fill:none;stroke:var(--pulse);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1600;stroke-dashoffset:1600;
+  animation:trace 3.2s cubic-bezier(.5,.1,.3,1) .3s forwards;
+}
+.ecg .base{stroke:var(--line);stroke-width:1.5;stroke-dasharray:none;animation:none}
+@keyframes trace{to{stroke-dashoffset:0}}
+.hero .lede{max-width:62ch;font-size:1.1rem;font-family:var(--serif);line-height:1.7}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;
+  padding:12px 22px;border-radius:8px;border:1.5px solid var(--teal);
+  background:var(--teal);color:#fff;
+}
+.btn:hover{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff}
+.btn.ghost{background:transparent;color:var(--teal)}
+.btn.ghost:hover{background:var(--teal-wash);color:var(--teal-deep)}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .btn{color:#06201f}
+  :root:not([data-theme="light"]) .btn:hover{color:#06201f}
+}
+:root[data-theme="dark"] .btn,:root[data-theme="dark"] .btn:hover{color:#06201f}
+:root[data-theme="dark"] .btn.ghost{color:var(--teal)}
+
+/* ---------- facts strip ---------- */
+.facts{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  border:1px solid var(--line);border-radius:10px;background:var(--panel);margin-top:48px;
+}
+.fact{padding:20px 22px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:var(--serif);font-weight:500;font-size:2rem;line-height:1.1;color:var(--teal-deep)}
+.fact span{font-size:.88rem;color:var(--ink-soft)}
+@media(max-width:700px){
+  .fact{border-right:0;border-bottom:1px solid var(--line)}
+  .fact:last-child{border-bottom:0}
+}
+
+/* ---------- about ---------- */
+.about p{max-width:68ch;font-family:var(--serif);font-size:1.12rem;line-height:1.75}
+.about p + p{margin-top:16px}
+
+/* ---------- skills ---------- */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.skill-box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
+.skill-box h3{font-size:1.15rem;margin-bottom:12px}
+.skill-box li{padding:6px 0;border-top:1px solid var(--line);font-size:.96rem}
+.skill-box li:first-child{border-top:0}
+.proc{display:flex;flex-wrap:wrap;gap:8px}
+.proc li{
+  border:1px solid var(--teal);color:var(--teal-deep);background:var(--teal-wash);
+  border-radius:999px;padding:5px 14px;font-size:.9rem;border-top:1px solid var(--teal)!important;
+}
+
+/* ---------- timeline ---------- */
+.timeline{position:relative;padding-left:34px}
+.timeline::before{
+  content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line);
+}
+.job{position:relative;padding-bottom:40px}
+.job:last-child{padding-bottom:0}
+.job::before{
+  content:"";position:absolute;left:-34px;top:8px;width:16px;height:16px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--teal);
+}
+.job.current::before{background:var(--pulse);border-color:var(--pulse);box-shadow:0 0 0 5px var(--teal-wash)}
+.job .when{font-size:.88rem;color:var(--teal-deep);font-weight:600}
+.job h3{font-size:1.4rem;margin:4px 0 2px}
+.job .where{color:var(--ink-soft);margin-bottom:14px}
+.job ul{max-width:72ch}
+.job li{position:relative;padding:4px 0 4px 20px}
+.job li::before{
+  content:"";position:absolute;left:0;top:.95em;width:8px;height:2px;background:var(--teal);
+}
+
+/* ---------- education ---------- */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
+.card h3{font-size:1.2rem;margin-bottom:4px}
+.card .meta{color:var(--ink-soft);font-size:.92rem}
+.card .tag{
+  display:inline-block;margin-top:12px;font-size:.82rem;color:var(--teal-deep);
+  background:var(--teal-wash);padding:3px 10px;border-radius:999px;
+}
+.sub{font-size:1.3rem;margin:40px 0 16px}
+.cert-list li{
+  display:grid;grid-template-columns:200px 1fr;gap:6px 24px;
+  padding:14px 0;border-top:1px solid var(--line);
+}
+.cert-list li:last-child{border-bottom:1px solid var(--line)}
+.cert-list b{font-weight:600}
+@media(max-width:640px){.cert-list li{grid-template-columns:1fr}}
+
+/* ---------- achievements ---------- */
+.ach{display:grid;gap:20px}
+.ach .card p{margin-top:6px}
+.cite{font-family:var(--serif);font-size:1.05rem}
+.cite em{font-style:italic}
+
+/* ---------- languages ---------- */
+.lang{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.lang .card{text-align:left}
+.lang .card h3{font-size:1.4rem}
+.bar{height:6px;border-radius:3px;background:var(--line);margin-top:14px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--teal)}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.contact-grid .card b{display:block;font-size:.88rem;color:var(--ink-soft);font-weight:500;margin-bottom:4px}
+.contact-grid .card a,.contact-grid .card span{font-size:1.05rem;word-break:break-word}
+footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.88rem}
+
+/* ---------- responsive ---------- */
+@media(max-width:960px){
+  .shell{display:block}
+  .side{
+    position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);
+    padding:24px 20px;flex-direction:row;flex-wrap:wrap;align-items:center;gap:16px;
+  }
+  .side .brand{display:flex;align-items:center;gap:14px;flex:1 1 260px}
+  .monogram{width:48px;height:48px;font-size:1.15rem}
+  .nav{flex-direction:row;flex-wrap:wrap;gap:6px 16px;flex:1 1 100%;order:3}
+  .nav a{border-left:0;padding:4px 0;border-bottom:2px solid transparent}
+  .nav a:hover,.nav a.active{border-bottom-color:var(--teal)}
+  .side-foot{display:none}
+  .mobile-theme{display:inline-block!important}
+}
+.mobile-theme{display:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ecg path{animation:none;stroke-dashoffset:0}
+}
+@media print{
+  .side,.theme-btn,.cta,.ecg{display:none}
+  .shell{display:block}
+  body{background:#fff;color:#000}
+  section{padding-top:28px;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <div class="brand">
+      <div class="monogram" aria-hidden="true">SS</div>
+      <div>
+        <h2>Dr. Swati Salvi</h2>
+        <p class="role">Internal Medicine &amp; Critical Care</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#top" class="active">Introduction</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#languages">Languages</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-btn mobile-theme" type="button" data-theme-toggle>Switch theme</button>
+    <div class="side-foot">
+      <a href="tel:+919876543210">+91 98765 43210</a>
+      <a href="mailto:dr.swatisalvi@email.com">dr.swatisalvi@email.com</a>
+      <span>Mumbai, Maharashtra, India</span>
+      <button class="theme-btn" type="button" data-theme-toggle>Switch theme</button>
+    </div>
+  </aside>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="name">
+      <p class="reg">MMC Reg. No: 2014/05/1234</p>
+      <h1 id="name"><span>Dr. Swati Salvi,</span><span>M.D.</span></h1>
+      <p class="title">Consultant, Internal Medicine &amp; Critical Care Specialist</p>
+
+      <svg class="ecg" viewBox="0 0 1000 84" preserveAspectRatio="none" aria-hidden="true">
+        <line class="base" x1="0" y1="44" x2="1000" y2="44" stroke="currentColor"/>
+        <path d="M0 44 H150 l12 -8 l12 8 H230 l10 6 l14 -42 l16 74 l12 -38 H350 q18 -22 36 0 H520
+                 l12 -8 l12 8 H600 l10 6 l14 -42 l16 74 l12 -38 H720 q18 -22 36 0 H860
+                 l10 6 l14 -42 l16 74 l12 -38 H1000"/>
+      </svg>
+
+      <p class="lede">Board-certified physician with over eight years of experience in acute and chronic adult illness, emergency care and preventive medicine. I lead ward and high dependency teams, coordinate care across specialties and build treatment plans around the patient.</p>
+
+      <div class="cta">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#experience">View experience</a>
+      </div>
+
+      <div class="facts" role="list">
+        <div class="fact" role="listitem"><b>8+</b><span>years of clinical practice</span></div>
+        <div class="fact" role="listitem"><b>40</b><span>beds led across IPD and HDU</span></div>
+        <div class="fact" role="listitem"><b>30+</b><span>OPD patients seen daily</span></div>
+        <div class="fact" role="listitem"><b>25%</b><span>shorter ED intake wait</span></div>
+        <div class="fact" role="listitem"><b>15+</b><span>free rural health camps</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about" aria-labelledby="about-h">
+      <h2 id="about-h">Professional summary</h2>
+      <p>I am a compassionate, dedicated and board-certified Internal Medicine physician with over 8 years of clinical experience managing acute and chronic adult illnesses, emergency care and preventive medicine.</p>
+      <p>My record includes high diagnostic accuracy, multi-disciplinary care coordination and patient-centered treatment plans. I lead hospital ward management, run clinical audits and teach resident staff.</p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Core competencies and skills</h2>
+      <div class="skill-grid">
+        <div class="skill-box">
+          <h3>Clinical specializations</h3>
+          <ul>
+            <li>Acute and critical care management</li>
+            <li>Chronic disease management: diabetes, hypertension, thyroid disorders</li>
+            <li>Infectious disease control</li>
+            <li>Preventive healthcare</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h3>Patient care</h3>
+          <ul>
+            <li>Diagnostic reasoning</li>
+            <li>Holistic treatment planning</li>
+            <li>Patient counseling and advocacy</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h3>Administrative and soft skills</h3>
+          <ul>
+            <li>Medical team leadership</li>
+            <li>Hospital Information Systems (HIS/EMR)</li>
+            <li>Crisis management</li>
+            <li>Multi-disciplinary collaboration</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="sub">Procedures</h3>
+      <ul class="proc">
+        <li>Central venous catheterization</li>
+        <li>Lumbar puncture</li>
+        <li>Arterial blood gas (ABG) sampling</li>
+        <li>Endotracheal intubation</li>
+        <li>Thoracentesis</li>
+      </ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-labelledby="exp-h">
+      <h2 id="exp-h">Professional experience</h2>
+      <div class="timeline">
+
+        <article class="job current">
+          <p class="when">Jan 2022 – Present</p>
+          <h3>Senior Consultant, Internal Medicine</h3>
+          <p class="where">Apex Multi-Specialty Hospital, Mumbai</p>
+          <ul>
+            <li>Lead a team of resident doctors and nursing staff managing a 40-bed Inpatient Department (IPD) and High Dependency Unit (HDU).</li>
+            <li>Diagnose and manage complex multi-organ conditions, including severe sepsis, metabolic disorders and acute respiratory distress.</li>
+            <li>Conduct Outpatient Department (OPD) consultations for 30+ patients daily, focusing on preventive screening and lifestyle modification.</li>
+            <li>Implemented a digital triage protocol in the Emergency Department that cut patient intake wait time by 25%.</li>
+            <li>Lead monthly clinical audits and morbidity and mortality review meetings to maintain high standards of patient outcomes.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <p class="when">Aug 2018 – Dec 2021</p>
+          <h3>Assistant Professor &amp; Consultant Physician</h3>
+          <p class="where">St. Jude Medical College &amp; Research Centre, Pune</p>
+          <ul>
+            <li>Delivered inpatient and outpatient medical care while mentoring medical undergraduates and junior resident physicians.</li>
+            <li>Served as attending physician in the Medical Intensive Care Unit (MICU), managing ventilator protocols and hemodynamic monitoring.</li>
+            <li>Co-authored 3 peer-reviewed research papers on non-communicable disease patterns in urban populations.</li>
+            <li>Facilitated weekly clinical case discussions and bedside teaching rounds for MBBS students.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <p class="when">May 2015 – May 2018</p>
+          <h3>Junior Resident Physician (MD Program)</h3>
+          <p class="where">Grant Government Medical College, Mumbai</p>
+          <ul>
+            <li>Completed intensive rotational residency across Intensive Care, Emergency Medicine, Cardiology, Nephrology and Gastroenterology.</li>
+            <li>Managed emergency admissions, performed emergency bedside procedures and charted individualized treatment plans under senior supervision.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" aria-labelledby="edu-h">
+      <h2 id="edu-h">Education and certifications</h2>
+      <div class="edu-grid">
+        <article class="card">
+          <h3>Doctor of Medicine (M.D.), General Medicine</h3>
+          <p class="meta">Grant Government Medical College, Mumbai</p>
+          <p class="meta">2015 – 2018</p>
+        </article>
+        <article class="card">
+          <h3>Bachelor of Medicine, Bachelor of Surgery (M.B.B.S.)</h3>
+          <p class="meta">Maharashtra University of Health Sciences (MUHS)</p>
+          <p class="meta">2009 – 2014</p>
+          <span class="tag">First Class Honors</span>
+        </article>
+      </div>
+
+      <h3 class="sub">Certifications and licenses</h3>
+      <ul class="cert-list">
+        <li>
+          <b>Medical registration</b>
+          <span>Registered with the Maharashtra Medical Council (MMC Reg. No: 2014/05/1234)</span>
+        </li>
+        <li>
+          <b>ACLS and BLS</b>
+          <span>Advanced Cardiovascular Life Support (ACLS) and Basic Life Support (BLS), certified by the American Heart Association (AHA)</span>
+        </li>
+        <li>
+          <b>Diploma in Diabetes Management</b>
+          <span>Public Health Foundation of India (PHFI), 2020</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" aria-labelledby="ach-h">
+      <h2 id="ach-h">Key achievements and research</h2>
+      <div class="ach">
+        <article class="card">
+          <h3>Best Clinical Resident, 2017</h3>
+          <p>Awarded at Grant Government Medical College.</p>
+        </article>
+        <article class="card">
+          <h3>Publication, 2020</h3>
+          <p class="cite">Salvi, S., et al. “Efficacy of Early Glycemic Control in ICU Patients with Sepsis.” <em>Journal of Clinical Internal Medicine</em>, 2020.</p>
+        </article>
+        <article class="card">
+          <h3>Community service</h3>
+          <p>Organized and led over 15 free health camps providing diabetes and hypertension screenings in rural Maharashtra.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section id="languages" aria-labelledby="lang-h">
+      <h2 id="lang-h">Languages</h2>
+      <div class="lang">
+        <div class="card"><h3>English</h3><p class="meta">Fluent</p><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="card"><h3>Hindi</h3><p class="meta">Fluent</p><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="card"><h3>Marathi</h3><p class="meta">Native / Fluent</p><div class="bar"><i style="width:100%"></i></div></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <div class="contact-grid">
+        <div class="card"><b>Phone</b><a href="tel:+919876543210">+91 98765 43210</a></div>
+        <div class="card"><b>Email</b><a href="mailto:dr.swatisalvi@email.com">dr.swatisalvi@email.com</a></div>
+        <div class="card"><b>Location</b><span>Mumbai, Maharashtra, India</span></div>
+        <div class="card"><b>LinkedIn</b><a href="https://linkedin.com/in/dr-swati-salvi-imaginary" target="_blank" rel="noopener">linkedin.com/in/dr-swati-salvi-imaginary</a></div>
+      </div>
+      <footer>© <span id="yr">2026</span> Dr. Swati Salvi, M.D. Medical Registration: MMC Reg. No: 2014/05/1234</footer>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  /* year */
+  var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
+
+  /* theme toggle */
+  var root=document.documentElement;
+  function isDark(){
+    var t=root.getAttribute('data-theme');
+    if(t) return t==='dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  document.querySelectorAll('[data-theme-toggle]').forEach(function(b){
+    b.addEventListener('click',function(){
+      root.setAttribute('data-theme', isDark()?'light':'dark');
+    });
+  });
+
+  /* highlight current section in nav */
+  var links=[].slice.call(document.querySelectorAll('.nav a'));
+  var map={};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+  var ids=['top','about','skills','experience','education','achievements','languages','contact'];
+  var els=ids.map(function(id){return document.getElementById(id);}).filter(Boolean);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(a){a.classList.remove('active');});
+          var l=map[e.target.id]; if(l) l.classList.add('active');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
